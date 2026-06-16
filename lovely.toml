@@ -5,6 +5,7 @@ dump_lua = true
 priority = 0
 
 
+
 #Burglar instant for Bobby compat
 [[patches]]
 [patches.pattern]
@@ -29,6 +30,7 @@ payload = '''
 ease_hands_played(self.ability.extra, true)
 '''
 match_indent = true
+
 
 [[patches]]
 [patches.pattern]
