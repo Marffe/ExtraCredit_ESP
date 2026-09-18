@@ -1176,8 +1176,9 @@ SMODS.Joker{ --Permanent Marker
     end,
 
     calculate = function(self, card, context)
-        if context.debuff_card and SMODS.get_enhancements(context.other_card) and next(SMODS.get_enhancements(context.other_card)) then
-            return true
+        -- ponytail: context.debuff_card holds the card, not context.other_card (nil here, crashed get_enhancements on booster open)
+        if context.debuff_card and context.debuff_card.config and next(SMODS.get_enhancements(context.debuff_card)) then
+            return { prevent_debuff = true }
         end
     end
 }
